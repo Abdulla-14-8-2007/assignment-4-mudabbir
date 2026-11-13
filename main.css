@@ -1,0 +1,1299 @@
+
+/* ============ start general =========== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* ============ end general =========== */
+
+
+/* ============ start main grid =========== */
+
+.parent-grid {
+    flex: 1;
+    min-width: 0;
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: repeat(11, auto);
+    gap: 18px;
+    align-items: stretch;
+
+   
+}
+
+.parent-grid > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+/* ============ end main grid =========== */
+
+
+/* ============ start header =========== */
+
+.app-header {
+    grid-column: 1 / 13;
+    grid-row: 1 / 2;
+
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 16px 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.right-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #2F4DEE;
+    border-radius: 14px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 4px 10px rgba(47, 77, 238, 0.3);
+}
+
+.logo-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.brand-text h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #111;
+}
+
+.brand-text p {
+    font-size: 12px;
+    color: #777;
+}
+
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    background-color: #e8f8ec;
+    padding: 6px 14px;
+    border-radius: 20px;
+
+    color: #2e7d32;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-badge .dot {
+    width: 8px;
+    height: 8px;
+    background-color: #2e7d32;
+    border-radius: 50%;
+}
+
+.left-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.action-btn {
+    width: 44px;
+    height: 44px;
+
+    background-color: #f8fafc;
+    border: 1px solid #edf2f7;
+    border-radius: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+
+.action-btn:hover {
+    background-color: #edf2f7;
+}
+
+.action-btn img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+
+    background-color: #ff4757;
+    color: white;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid #fff;
+}
+
+.user-card {
+    margin-left: 5px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    background-color: #ffffff;
+    border: 1px solid #edf2f7;
+    padding: 6px 12px;
+    border-radius: 14px;
+
+    transition: all 0.3s ease;
+}
+
+.user-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.user-details h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #222;
+}
+
+.user-details span {
+    font-size: 11px;
+    color: #777;
+}
+
+.avatar-1 {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* ============ end header =========== */
+
+
+/* ============ start sidebar =========== */
+
+.sidebar {
+    order: 0;
+    width: 280px;
+    flex-shrink: 0;
+
+    
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: 100vh;
+    overflow-y: auto;
+
+    background-color: #ffffff;
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    border-left: 1px solid #edf2f7;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.sidebar .brand-text h3 {
+    font-size: 20px;
+    text-align: right;
+}
+
+.sidebar .brand-text p {
+    font-size: 11px;
+}
+
+.sidebar-menu {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-item a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 12px 16px;
+
+    text-decoration: none;
+    color: #555;
+
+    font-weight: 600;
+    font-size: 14px;
+
+    border-radius: 12px;
+    justify-content: flex-start;
+
+    transition: 0.2s;
+}
+
+.menu-item.active a {
+    background-color: #f0f4ff;
+    color: #2F4DEE;
+    border: 1px solid #dbeafe;
+}
+
+.menu-item a img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.menu-item a:hover {
+    background-color: #F9FAFB;
+}
+
+.quick-actions-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.section-title {
+    font-size: 13px;
+    color: #888;
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-align: right;
+}
+
+.quick-actions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-card {
+    display: flex;
+    align-items: center;
+
+    padding: 10px 14px;
+    border-radius: 14px;
+
+    background-color: #fafbfc;
+    border: 1px solid #f0f4f8;
+
+    cursor: pointer;
+    justify-content: flex-start;
+    transition: 0.2s;
+}
+
+.action-card:hover {
+    background-color: #FAFAFA;
+}
+
+.action-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.action-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-icon.blue {
+    background-color: #eef2ff;
+    margin: 2px;
+}
+
+.action-icon.green {
+    background-color: #d1fae5;
+    margin: 2px;
+}
+
+.action-icon.purple {
+    background-color: #f3e8ff;
+    margin: 2px;
+}
+
+.action-icon.orange {
+    background-color: #ffedd5;
+    margin: 2px;
+}
+
+.action-icon img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* ============ end sidebar =========== */
+
+
+/* ============ start shared card =========== */
+
+.card {
+    background: #fff;
+    padding: 24px;
+    border-radius: 16px;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+    min-width: 0;
+    max-width: 100%;
+}
+
+.card-heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+}
+
+.card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.view-link {
+    color: #2F4DEE;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.plus {
+    color: #00b050;
+    font-weight: 700;
+    direction: ltr;
+}
+
+.minus {
+    color: black;
+    font-weight: 700;
+    direction: ltr;
+}
+
+/* ============ end shared card =========== */
+
+
+/* ============ start stats =========== */
+
+.balance-card,
+.stat-card {
+    grid-column: span 4;
+    grid-row: 2 / 3;
+
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+    text-align: right;
+}
+
+
+.balance-card {
+    grid-column: 1 / 5;
+}
+
+.balance-card + .stat-card {
+    grid-column: 5 / 9;
+}
+
+.balance-card + .stat-card + .stat-card {
+    grid-column: 9 / 13;
+}
+
+.card-title {
+    font-size: 16px;
+    color: #6c757d;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.card-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1a1d20;
+    margin-bottom: 12px;
+}
+
+.card-trend {
+    font-size: 14px;
+    font-weight: 600;
+    color: #00b050;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    justify-content: flex-start;
+}
+
+.card-trend.down {
+    color: #ff4757;
+}
+
+.trend-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+/* ============ end stats =========== */
+
+
+/* ============ start grid card positions =========== */
+
+/* Transactions */
+.transactions {
+    grid-column: 5/ 13;
+    grid-row: 3 / 7;
+}
+
+/* Activities */
+.card-activities {
+    grid-column: 1 / 5;
+    grid-row: 3 / 5;
+
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.card-activities .view-link {
+    text-align: center;
+    margin-top: 4px;
+}
+
+/* Bills */
+.bills {
+    grid-column: 1 / 5;
+    grid-row: 5 / 7;
+}
+
+
+.bills-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bills-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border-top: none;
+}
+
+.bills-list li .who-icon {
+    margin-left: 12px;
+}
+
+.bills-list li .bill-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+/* Budget */
+.budget {
+    grid-column: 1 / 5;
+    grid-row: 7 / 12;
+}
+
+/* Chart */
+.chart {
+    grid-column: 5/ 9;
+    grid-row: 7 / 9;
+}
+
+/* Summary */
+.summary {
+    grid-column: 5/ 9;
+    grid-row: 9 / 12;
+}
+
+/* Payments */
+.payments {
+    grid-column: 9/ 13;
+    grid-row: 7 / 12;
+}
+
+
+@media (min-width: 1101px) {
+    .budget .budget-top,
+    .budget .cats {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* ============ end grid card positions =========== */
+
+
+/* ============ start activities =========== */
+
+.activity-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+
+    background: #f8fafc;
+    border-radius: 12px;
+}
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.activity-icon.blue {
+    background: #eef2ff;
+}
+
+.activity-icon.purple {
+    background: #f3e8ff;
+}
+
+.activity-icon img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.activity-info {
+    min-width: 0;
+}
+
+.activity-info h4 {
+    font-size: 14px;
+    color: #222;
+}
+
+.activity-info p {
+    font-size: 13px;
+    color: #777;
+}
+
+/* ============ end activities =========== */
+
+
+/* ============ start transactions =========== */
+
+.table-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.transactions-table {
+    width: 100%;
+    min-width: 560px;
+}
+
+.transaction-row {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr 1.1fr 0.8fr 1fr;
+    align-items: center;
+}
+
+.table-header {
+    border-bottom: 1px solid #edf2f7;
+}
+
+.table-heading {
+    text-align: right;
+    font-size: 13px;
+    color: #888;
+    padding: 10px 8px;
+}
+
+.table-cell {
+    padding: 12px 8px;
+    font-size: 14px;
+    border-bottom: 1px solid #f0f4f8;
+}
+
+.bg-green {
+    background-color: #e8f5e9;
+    color: #1a6d3f;
+
+    padding: 2px 10px;
+    font-size: 12px;
+    border-radius: 25px;
+}
+
+.arrow-down {
+    width: 12px;
+    height: 12px;
+}
+
+.who {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.who div {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+}
+
+.who-img {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.who-icon {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+
+    background: #f4f6f9;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.who-icon img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.state {
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.state.done {
+    background: #e8f8ec;
+    color: #2e7d32;
+}
+
+.state.wait {
+    background: #fff3dc;
+    color: #d97706;
+}
+
+/* ============ end transactions =========== */
+
+
+/* ============ start chart, budget & bills =========== */
+
+/* Chart */
+
+.legend {
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+    margin-bottom: 14px;
+}
+
+.legend span::before {
+    content: "";
+    display: inline-block;
+
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+
+    margin-left: 6px;
+}
+
+.inc-dot::before {
+    background: #00b050;
+}
+
+.exp-dot::before {
+    background: #ff4757;
+}
+
+.bars {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    height: 220px;
+}
+
+.week {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 4px;
+    align-items: end;
+}
+
+.week div {
+    border-radius: 6px 6px 0 0;
+}
+
+.week div.inc {
+    background: #00b050;
+}
+
+.week div.exp {
+    background: #ff4757;
+}
+
+.week span {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+}
+
+/* Budget */
+
+.budget-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.budget-top div {
+    display: flex;
+    flex-direction: column;
+}
+
+.budget-top span {
+    color: #777;
+    font-size: 13px;
+}
+
+.budget-top .budget-number {
+    font-size: 22px;
+    color: #111;
+}
+
+.budget-used {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.progress {
+    height: 8px;
+    background: #edf2f7;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    display: block;
+    height: 100%;
+    background: #2F4DEE;
+    border-radius: 20px;
+}
+
+.progress-fill.full {
+    background: #ff4757;
+}
+
+.cats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.cat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    padding: 14px;
+    background: #f8fafc;
+    border-radius: 12px;
+
+    min-width: 0;
+}
+
+.cat .text-small,
+.cat span {
+    color: #777;
+    font-size: 12px;
+}
+
+/* Bills */
+
+.bills-total {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.bills-total .total-price {
+    font-size: 26px;
+    color: #1a1d20;
+}
+
+.bills-total span {
+    font-size: 13px;
+    color: #777;
+}
+
+.bills-list {
+    list-style: none;
+}
+
+.bills-list li {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+
+    padding: 12px 0;
+    border-top: 1px solid #f0f4f8;
+}
+
+.bill-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+}
+
+/* ============ end chart, budget & bills =========== */
+
+
+/* ============ start payments =========== */
+
+/* ============ start payments =========== */
+
+.payments {
+    grid-column: 9 / 13;
+    grid-row: 7 / 12;
+}
+
+.pay-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    min-width: 0;
+}
+
+.pay-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 14px;
+    color: #fff;
+    background: linear-gradient(135deg, #2F4DEE, #1d3fa8);
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.pay-card.dark {
+    background: linear-gradient(135deg, #c72c2c, #ca3737);
+}
+
+.pay-card.paypal {
+    background: linear-gradient(135deg, #0b3d91, #009cde);
+}
+
+.pay-card .text-small {
+    display: block;
+    color: #cbd5ff;
+    font-size: 11px;
+}
+
+.pay-num {
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.pay-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.pay-row > div {
+    min-width: 0;
+}
+
+.pay-row .text-bold {
+    overflow-wrap: anywhere;
+}
+
+.pay-tag {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0 10px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.pay-back {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 4px;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 10px;
+}
+
+.pay-back .text-small {
+    font-size: 9px;
+}
+
+/* ============ end payments =========== */
+/* ============ end payments =========== */
+
+
+/* ============ start summary =========== */
+
+.summary-list {
+    list-style: none;
+}
+
+.summary-list li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+
+    padding: 12px 0;
+    border-top: 1px solid #f0f4f8;
+}
+
+.summary-list li div {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.4;
+}
+
+/* ============ end summary =========== */
+
+
+/* ============ start new tags styling =========== */
+
+.text-bold {
+    font-weight: 700;
+    display: inline-block;
+}
+
+.text-small {
+    font-size: 12px;
+    color: #888;
+    display: block;
+}
+
+/* ============ end new tags styling =========== */
+
+
+/* ============ start responsive =========== */
+
+@media (max-width: 1100px) {
+
+    .parent-grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-rows: auto;
+    }
+
+    .app-header {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .balance-card,
+    .balance-card + .stat-card,
+    .balance-card + .stat-card + .stat-card {
+        grid-column: span 2;
+        grid-row: auto;
+    }
+
+    .card-activities,
+    .bills {
+        grid-column: span 3;
+        grid-row: auto;
+    }
+
+    .transactions,
+    .chart,
+    .budget,
+    .payments,
+    .summary {
+        grid-column: span 6;
+        grid-row: auto;
+    }
+
+    .pay-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+
+/* Tablet and mobile */
+
+@media (max-width: 768px) {
+
+    body {
+        flex-direction: column;
+    }
+
+    /* السايد بار يتحول لشريط علوي بدل إخفائه */
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        overflow-y: visible;
+        padding: 12px;
+        gap: 14px;
+        border-left: 0;
+        border-bottom: 1px solid #edf2f7;
+    }
+
+    .sidebar-menu {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 6px;
+    }
+
+    .menu-item a {
+        white-space: nowrap;
+        padding: 10px 12px;
+    }
+
+    .quick-actions-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .parent-grid {
+        flex: none;
+        width: calc(100% - 20px);
+        margin: 10px;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+        gap: 12px;
+    }
+
+    .app-header,
+    .balance-card,
+    .balance-card + .stat-card,
+    .balance-card + .stat-card + .stat-card,
+    .card-activities,
+    .transactions,
+    .bills,
+    .budget,
+    .chart,
+    .payments,
+    .summary {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .app-header {
+        padding: 12px;
+    }
+
+    .header-container {
+        gap: 10px;
+    }
+
+    .right-header {
+        gap: 8px;
+    }
+
+    .left-header {
+        gap: 6px;
+    }
+
+    .brand-text h3 {
+        font-size: 18px;
+    }
+
+    .status-badge {
+        display: none;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .balance-card,
+    .stat-card {
+        padding: 16px;
+    }
+
+    .card-value {
+        font-size: 25px;
+    }
+
+    .cats,
+    .pay-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .budget-top {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pay-card {
+        min-height: 150px;
+    }
+}
+
+
+/* Small mobile */
+
+@media (max-width: 480px) {
+
+    .parent-grid {
+        width: calc(100% - 16px);
+        margin: 8px;
+        gap: 10px;
+    }
+
+    .app-header {
+        padding: 10px;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-box {
+        gap: 7px;
+    }
+
+    .brand-text h3 {
+        font-size: 16px;
+    }
+
+    .brand-text p {
+        font-size: 10px;
+    }
+
+    .action-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .action-btn img {
+        width: 17px;
+        height: 17px;
+    }
+
+    .user-card {
+        padding: 4px;
+        gap: 5px;
+        margin-left: 0;
+    }
+
+    .user-details {
+        display: none;
+    }
+
+    .avatar-1 {
+        width: 32px;
+        height: 32px;
+    }
+
+    .card-value {
+        font-size: 22px;
+    }
+
+    .card-heading {
+        font-size: 16px;
+    }
+}
+
+/* ============ end responsive =========== */
